@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Только для тебя</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe4ec, #fff);
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #000;
+    }
+    header p {
+      font-size: 1.5em;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .message {
+      font-size: 1.3em;
+      line-height: 1.6;
+      background: #fff0f5;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      max-height: 200px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .list {
+      margin-top: 30px;
+    }
+
+    .list ul {
+      list-style: heart;
+      font-size: 1.1em;
+    }
+
+    .cta {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      font-size: 1.2em;
+      padding: 15px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .cta button:hover {
+      background: #e75480;
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.4em;
+      text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Привет, [Имя]!</h1>
+    <p>Этот сайт — только для тебя</p>
+  </header>
+
+  <section>
+    <div class="message">
+      Я долго думал, как сказать тебе всё, что чувствую...  
+      Ты невероятная. Твоя улыбка — как утро в начале весны.  
+      И каждый день, когда мы общаемся, становится чуть-чуть светлее.
+    </div>
+
+    <div class="gallery">
+      <img src="https://source.unsplash.com/400x300/?romantic" alt="photo1">
+      <img src="https://source.unsplash.com/400x300/?love" alt="photo2">
+      <img src="https://source.unsplash.com/400x300/?sky" alt="photo3">
+    </div>
+
+    <div class="list">
+      <h3>Топ-5 причин, почему ты мне нравишься:</h3>
+      <ul>
+        <li>Твоя искренняя улыбка</li>
+        <li>Твоя доброта и ум</li>
+        <li>Твоя энергия</li>
+        <li>Как ты смеёшься</li>
+        <li>Ты просто ты. И этого достаточно.</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <button onclick="showSecret()">Нажми, если хочешь узнать секрет</button>
+      <div class="hidden-message" id="secret">
+        Ты мне очень нравишься.  
+        Хочешь встретиться и прогуляться вместе?
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showSecret() {
+      document.getElementById('secret').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
