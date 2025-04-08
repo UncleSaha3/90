@@ -11,19 +11,6 @@
       background: linear-gradient(to bottom, #ffe4ec, #fff);
       color: #333;
     }
-    <header>
-  <h1>Привет, [Имя]!</h1>
-  <p>Этот сайт — только для тебя</p>
-</header>
-
-<div style="text-align: center; margin-top: 20px;">
-  <p>Включи музыку для атмосферы:</p>
-  <audio controls>
-    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
-    Ваш браузер не поддерживает аудиоэлемент.
-  </audio>
-</div>
-
     header {
       background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
       color: white;
@@ -116,6 +103,14 @@
     <p>Этот сайт — только для тебя</p>
   </header>
 
+  <div style="text-align: center; margin-top: 20px;">
+    <p>Включи музыку для атмосферы:</p>
+    <audio controls>
+      <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудиоэлемент.
+    </audio>
+  </div>
+
   <section>
     <div class="message">
       Я долго думал, как сказать тебе всё, что чувствую...  
@@ -148,6 +143,15 @@
       </div>
     </div>
   </section>
+
+  <script>
+    function showSecret() {
+      document.getElementById('secret').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
 
   <script>
     function showSecret() {
