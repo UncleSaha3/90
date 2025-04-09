@@ -18,8 +18,7 @@
       text-align: center;
       height: 100vh;
       width: 100vw;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/contain no-repeat;
-      background-size: cover;
+      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -130,11 +129,18 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        background-position: center top;
+        background-size: cover;
+      }
+      .intro-text {
+        padding: 40px 15px;
+      }
       .intro-text h1 {
-        font-size: 22px;
+        font-size: 1.8em;
       }
       .intro-text p {
-        font-size: 14px;
+        font-size: 1em;
       }
     }
   </style>
@@ -197,3 +203,4 @@
 
 </body>
 </html>
+
