@@ -8,15 +8,18 @@
   <style>
     body {
       margin: 0;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat fixed;
-      background-size: cover;
       color: white;
       font-family: sans-serif;
     }
 
     header {
       text-align: center;
-      padding: 200px 20px;
+      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .content {
@@ -106,9 +109,6 @@
     }
 
     @media (max-width: 768px) {
-      header {
-        padding: 120px 10px;
-      }
       header h1 {
         font-size: 22px;
       }
@@ -120,11 +120,10 @@
 </head>
 <body>
 
-<header></header>
-
-<div class="content" style="text-align: center;">
+<header>
   <h1>Привет, Галчонок!</h1>
   <p>Ровно 22 года назад, в 15 часов 20 минут, родилась такая прекрасная девушка как ты</p>
+</header>
 </div>
 
 <div style="text-align: center; margin-top: 20px;">
