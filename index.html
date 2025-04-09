@@ -20,12 +20,13 @@
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
+
     header {
       position: relative;
       text-align: center;
       width: 100vw;
-      height: 145vh;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') bottom center no-repeat;
+      height: 85vh;
+      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center center no-repeat;
       background-size: cover;
       background-color: #29666f;
       display: flex;
@@ -39,7 +40,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
 
@@ -52,7 +53,7 @@
 
     .intro-text h1 {
       font-size: 3em;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       text-shadow: 2px 2px 4px #000;
     }
 
@@ -67,9 +68,9 @@
       margin: 20px;
       border-radius: 20px;
     }
-.content audio {
-       width: 100%;
-      max-width: 600px;
+
+    .content audio {
+      width: 400px;
     }
 
     section {
@@ -144,22 +145,18 @@
     @media (max-width: 768px) {
       header {
         height: 100vh;
-        background-position: top center;
-        background-size: 100% 100%;
+        background-size: cover;
+        background-position: center center;
         align-items: flex-end;
       }
       .intro-text {
         padding-bottom: 60px;
       }
       .intro-text h1 {
-        font-size: 30px;
+        font-size: 22px;
       }
       .intro-text p {
-        font-size: 18px;
-      }
-      .content audio {
-        width: 100%;
-        max-width: 100%;
+        font-size: 14px;
       }
     }
 
@@ -178,7 +175,7 @@
 <header>
   <div class="intro-text">
     <h1>Привет, Галчонок!</h1>
-    <p>Говорят в 15:20 10 апреля 2003 года, родилась самая светлая девушка))</p>
+    <p>Ровно 22 года назад, в 15 часов 20 минут, родилась такая прекрасная девушка как ты</p>
   </div>
 </header>
 
@@ -188,8 +185,16 @@
     <source src="https://cvws.icloud-content.com/B/AVmVXJmg0hAoOkcqAvGoJOpxdcZyARPcH6VFk9kQKvlyka-ugkYGkJLd/%D0%9F%D1%80%D0%BE%D0%BD%D0%B7%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B2%D0%BE%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_%D0%93%D1%80%D0%BE%D0%BC%D0%BA%D0%B8%D0%B9_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_.mp3" type="audio/mpeg">
     Ваш браузер не поддерживает аудиоэлемент.
   </audio>
-  <section>
-   <div class="gallery">
+</div>
+
+<section>
+  <div class="message">
+    Я долго думал, как сказать тебе всё, что чувствую...<br>
+    Ты невероятная. Твоя улыбка — как утро в начале весны.<br>
+    И каждый день, когда мы общаемся, становится чуть-чуть светлее.
+  </div>
+
+  <div class="gallery">
     <img src="https://source.unsplash.com/400x300/?romantic" alt="photo1">
     <img src="https://source.unsplash.com/400x300/?love" alt="photo2">
     <img src="https://source.unsplash.com/400x300/?sky" alt="photo3">
@@ -211,10 +216,19 @@
     <div class="hidden-message" id="secret">
       Ты мне очень нравишься.<br>
       Хочешь встретиться и прогуляться вместе?
-</div>
-
-</div>
+    </div>
+  </div>
 </section>
+
+<script>
+  function showSecret() {
+    document.getElementById('secret').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
+
 
 <script>
   function showSecret() {
