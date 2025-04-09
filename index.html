@@ -307,28 +307,24 @@
 </div>
 
 <script>
-  let secretStep = 0;
+  let secretVisible = false;
 
   function showSecret() {
     const secretBox = document.getElementById('secretBox');
     const secretText = document.getElementById('secretText');
     const secretImage = document.getElementById('secretImage');
 
-    secretBox.style.display = 'block';
-
-    if (secretStep === 0) {
+    if (!secretVisible) {
+      secretBox.style.display = 'block';
       secretText.style.display = 'block';
-      secretImage.style.display = 'none';
-    } else if (secretStep === 1) {
       secretImage.style.display = 'block';
     } else {
       secretBox.style.display = 'none';
       secretText.style.display = 'none';
       secretImage.style.display = 'none';
-      secretStep = -1;
     }
 
-    secretStep++;
+    secretVisible = !secretVisible;
   }
 
   function closeModal() {
