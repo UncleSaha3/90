@@ -10,9 +10,16 @@
       margin: 0;
       color: white;
       font-family: sans-serif;
-      background-color: #29666f;
+      background: linear-gradient(270deg, #29666f, #4f9ca4, #2a4d52);
+      background-size: 600% 600%;
+      animation: gradientFlow 15s ease infinite;
     }
 
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
     header {
       position: relative;
       text-align: center;
@@ -171,26 +178,18 @@
 <header>
   <div class="intro-text">
     <h1>Привет, Галчонок!</h1>
-    <p> Говорят в 15:20 10 апреля 2003 года, родилась самая светлая девушка)) </p>
+    <p>Говорят в 15:20 10 апреля 2003 года, родилась самая светлая девушка))</p>
   </div>
 </header>
 
 <div class="content" style="text-align: center;">
-  <p>*тык*:</p>
+  <p>Включи музыку для атмосферы:</p>
   <audio controls>
     <source src="https://cvws.icloud-content.com/B/AVmVXJmg0hAoOkcqAvGoJOpxdcZyARPcH6VFk9kQKvlyka-ugkYGkJLd/%D0%9F%D1%80%D0%BE%D0%BD%D0%B7%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B2%D0%BE%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_%D0%93%D1%80%D0%BE%D0%BC%D0%BA%D0%B8%D0%B9_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_.mp3" type="audio/mpeg">
     Ваш браузер не поддерживает аудиоэлемент.
   </audio>
-</div>
-
-<section>
-  <div class="message">
-    Я долго думал, как сказать тебе всё, что чувствую...<br>
-    Ты невероятная. Твоя улыбка — как утро в начале весны.<br>
-    И каждый день, когда мы общаемся, становится чуть-чуть светлее.
-  </div>
-
-  <div class="gallery">
+  <section>
+   <div class="gallery">
     <img src="https://source.unsplash.com/400x300/?romantic" alt="photo1">
     <img src="https://source.unsplash.com/400x300/?love" alt="photo2">
     <img src="https://source.unsplash.com/400x300/?sky" alt="photo3">
@@ -212,8 +211,9 @@
     <div class="hidden-message" id="secret">
       Ты мне очень нравишься.<br>
       Хочешь встретиться и прогуляться вместе?
-    </div>
-  </div>
+</div>
+
+</div>
 </section>
 
 <script>
@@ -221,7 +221,6 @@
     document.getElementById('secret').style.display = 'block';
   }
 </script>
-
 </body>
 </html>
 
