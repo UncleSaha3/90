@@ -22,7 +22,7 @@
       background-size: cover;
       background-color: #000;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       overflow: hidden;
     }
@@ -40,7 +40,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 60px 20px;
+      padding: 20px 20px 60px;
     }
 
     .intro-text h1 {
@@ -132,9 +132,13 @@
 
     @media (max-width: 768px) {
       header {
-        height: 60vh;
+        height: 100vh;
         background-position: top center;
         background-size: contain;
+        align-items: center;
+      }
+      .intro-text {
+        padding: 60px 20px;
       }
       .intro-text h1 {
         font-size: 22px;
@@ -203,4 +207,3 @@
 
 </body>
 </html>
-
