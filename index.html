@@ -16,13 +16,14 @@
     header {
       position: relative;
       text-align: center;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9_edit_647891546251656.png') center/cover no-repeat;
-      min-height: 600px;
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
+      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/contain no-repeat;
+      background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-sizing: border-box;
+      overflow: hidden;
     }
 
     header::before {
@@ -146,7 +147,6 @@
     <p>Ровно 22 года назад, в 15 часов 20 минут, родилась такая прекрасная девушка как ты</p>
   </div>
 </header>
-
 
 <div class="content" style="text-align: center;">
   <p>Включи музыку для атмосферы:</p>
