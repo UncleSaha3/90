@@ -135,16 +135,22 @@
         height: 100vh;
         background-position: top center;
         background-size: contain;
-        align-items: center;
+        align-items: flex-start;
       }
       .intro-text {
-        padding: 60px 20px;
+        padding: 100px 20px 20px;
       }
       .intro-text h1 {
         font-size: 22px;
       }
       .intro-text p {
         font-size: 14px;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .intro-text {
+        padding: 20px 20px 100px;
       }
     }
   </style>
@@ -207,3 +213,4 @@
 
 </body>
 </html>
+
