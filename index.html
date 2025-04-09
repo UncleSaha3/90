@@ -6,18 +6,27 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>С Днем Рождения! </title>
    <style>
-     body {
-       margin: 0;
-       font-family: 'Segoe UI', sans-serif;
-       background: linear-gradient(to bottom, #ffe4ec, #fff);
-       color: #333;
-     }
+     header {
+    background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
+    text-align: center;
+    padding: 200px 20px;
+    color: white;
+  }
+
+  @media (max-width: 768px) {
     header {
-        background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
-        color: white;
-        text-align: center;
-        padding: 100px 20px;
-      }
+      padding: 120px 10px;
+      background-position: top center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    header h1 {
+      font-size: 22px;
+    }
+    header p {
+      font-size: 14px;
+    }
+  }
 </header>
      header h1 {
        font-size: 3em;
