@@ -170,7 +170,13 @@
       border-radius: 10px;
       box-shadow: 0 0 20px black;
     }
-
+.hidden-image {
+  display: none;
+  margin-top: 30px;
+  font-size: 1.4em;
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
     .close {
       position: absolute;
       top: 15px;
@@ -281,11 +287,13 @@
   </div>
 
   <div class="cta">
-    <button onclick="showSecret()">Нажми, если хочешь узнать секрет</button>
-    <div class="hidden-img" id="secret">
-      <img src="scale_1200.png" alt="Фото 4">.<br>
-      Хочешь встретиться и прогуляться вместе?
-    </div>
+  <button onclick="toggleSecret()">Нажми, если хочешь узнать секрет</button>
+  <div class="hidden-message" id="secretText">
+    Ты мне очень нравишься.<br>
+    Хочешь встретиться и прогуляться вместе?
+  </div>
+  <div class="hidden-image" id="secretImage">
+    <img src="scale_1200.png" alt="Секретная фотка" style="max-width: 300px; border-radius: 10px;">
   </div>
 </section>
 
@@ -296,20 +304,31 @@
 </div>
 
 <script>
+  <script>
+  let secretStep = 0;
+
   function showSecret() {
-    document.getElementById('secret').style.display = 'block';
+    const secretBox = document.getElementById('secret');
+    const secretText = document.getElementById('secretText');
+    const secretImage = document.getElementById('secretImage');
+
+    secretBox.style.display = 'block';
+
+    if (secretStep === 0) {
+      secretText.style.display = 'block';
+      secretImage.style.display = 'none';
+    } else if (secretStep === 1) {
+      secretImage.style.display = 'block';
+    } else {
+      secretBox.style.display = 'none';
+      secretText.style.display = 'none';
+      secretImage.style.display = 'none';
+      secretStep = -1;
+    }
+
+    secretStep++;
   }
-
-  const modal = document.getElementById("modal");
-  const modalImg = document.getElementById("modalImage");
-
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-    });
-  });
-
+</script>
   function closeModal() {
     modal.style.display = "none";
   }
