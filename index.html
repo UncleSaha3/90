@@ -10,7 +10,15 @@
       margin: 0;
       color: white;
       font-family: sans-serif;
-      background-color: #29666f;
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+      background-size: 1000% 1000%;
+      animation: gradientAnimation 30s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header {
@@ -18,13 +26,13 @@
       text-align: center;
       width: 100vw;
       height: 145vh;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') bottom center no-repeat;
-      background-size: cover;
-      background-color: #29666f;
+      background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+        url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
       display: flex;
       align-items: flex-end;
       justify-content: center;
       overflow: hidden;
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
     }
 
     header::before {
@@ -147,7 +155,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Модальное окно */
     .modal {
       display: none;
       position: fixed;
@@ -188,19 +195,24 @@
         background-size: 100% 100%;
         align-items: flex-end;
       }
+
       .intro-text {
         padding-bottom: 60px;
       }
+
       .intro-text h1 {
         font-size: 30px;
       }
+
       .intro-text p {
         font-size: 18px;
       }
+
       .gallery {
         flex-direction: column;
         align-items: center;
       }
+
       .gallery img {
         max-width: 100%;
       }
@@ -212,7 +224,7 @@
 <header>
   <div class="intro-text">
     <h1>Привет, Галчонок!</h1>
-    <p> Говорят в 15:20 10 апреля 2003 года, родилась самая светлая девушка)) </p>
+    <p>Говорят в 15:20 10 апреля 2003 года, родилась самая светлая девушка))</p>
   </div>
 </header>
 
