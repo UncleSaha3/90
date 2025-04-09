@@ -6,19 +6,29 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>С Днем Рождения! </title>
    <style>
-     header {
-    background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
+  body {
+    margin: 0;
+    background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat fixed;
+    background-size: cover;
+    color: white;
+    font-family: sans-serif;
+  }
+
+  header {
     text-align: center;
     padding: 200px 20px;
-    color: white;
+  }
+
+  .content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px 20px;
+    margin: 20px;
+    border-radius: 20px;
   }
 
   @media (max-width: 768px) {
     header {
       padding: 120px 10px;
-      background-position: top center;
-      background-size: contain;
-      background-repeat: no-repeat;
     }
     header h1 {
       font-size: 22px;
@@ -27,7 +37,16 @@
       font-size: 14px;
     }
   }
+</style>
+
+<header></header>
+
+<div class="content" style="text-align: center;">
+  <h1>Привет, Галчонок!</h1>
+  <p>Ровно 22 года назад, в 15 часов 20 минут, радилась такая прекрасная девушка как ты</p>
+</div>
 </header>
+  <header>
      header h1 {
        font-size: 3em;
        margin-bottom: 10px;
@@ -105,34 +124,7 @@
        from { opacity: 0; transform: translateY(20px); }
        to { opacity: 1; transform: translateY(0); }
      }
- <style>
-  header {
-    background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
-    text-align: center;
-    padding: 200px 20px;
-    color: white;
-  }
-
-  @media (max-width: 768px) {
-    header {
-      padding: 100px 10px;
-      background-position: center;
-      background-size: cover;
-    }
-    header h1 {
-      font-size: 24px;
-    }
-    header p {
-      font-size: 16px;
-    }
-  }
-</style>
-
-<header>
-  <h1>Привет, Галчонок!</h1>
-  <p>Ровно 22 года назад, в 15 часов 20 минут, радилась такая прекрасная девушка как ты</p>
-</header>
- 
+  </header>
    <div style="text-align: center; margin-top: 20px;">
      <p>Включи музыку для атмосферы:</p>
      <audio controls>
