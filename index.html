@@ -10,14 +10,14 @@
       margin: 0;
       color: white;
       font-family: sans-serif;
+      background-color: #000;
     }
 
     header {
       text-align: center;
-      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/cover no-repeat;
-      height: 100vh;
+      background: url('65384df2-a2af-4c65-9f56-731dd43998c9.png') center/contain no-repeat;
+      height: 80vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
     }
@@ -29,13 +29,18 @@
       border-radius: 20px;
     }
 
-    header h1 {
+    .intro-text {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .intro-text h1 {
       font-size: 3em;
       margin-bottom: 10px;
       text-shadow: 2px 2px 4px #000;
     }
 
-    header p {
+    .intro-text p {
       font-size: 1.5em;
     }
 
@@ -109,10 +114,10 @@
     }
 
     @media (max-width: 768px) {
-      header h1 {
+      .intro-text h1 {
         font-size: 22px;
       }
-      header p {
+      .intro-text p {
         font-size: 14px;
       }
     }
@@ -120,10 +125,13 @@
 </head>
 <body>
 
-<header>
+<header></header>
+
+<div class="intro-text">
   <h1>Привет, Галчонок!</h1>
   <p>Ровно 22 года назад, в 15 часов 20 минут, родилась такая прекрасная девушка как ты</p>
-</header>
+</div>
+
 </div>
 
 <div style="text-align: center; margin-top: 20px;">
