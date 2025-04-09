@@ -40,7 +40,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      padding-bottom: 5px;
+      padding-bottom: 5px
     }
 
     .intro-text h1 {
@@ -59,6 +59,7 @@
       padding: 32px 26px;
       margin: 20px;
       border-radius: 78px;
+      text-align: center;
     }
 
     .content audio {
@@ -87,23 +88,22 @@
 
     .gallery {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 20px;
       margin-top: 40px;
-      justify-content: center;
     }
 
     .gallery img {
       width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 20px;
+      max-width: 32%;
+      height: auto;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    @media (min-width: 768px) {
-      .gallery img {
-        width: calc(33.333% - 13.33px);
-      }
+    .gallery img:hover {
+      transform: scale(1.05);
     }
 
     .list {
@@ -147,6 +147,40 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Модальное окно */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+      cursor: zoom-out;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px black;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       header {
         height: 100vh;
@@ -163,18 +197,12 @@
       .intro-text p {
         font-size: 18px;
       }
-      .content audio {
-        width: 100%;
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+      .gallery img {
         max-width: 100%;
-      }
-    }
-
-    @media (min-width: 769px) {
-      header {
-        background-position: center top -15px;
-      }
-      .intro-text {
-        padding-bottom: 140px;
       }
     }
   </style>
@@ -188,10 +216,10 @@
   </div>
 </header>
 
-<div class="content" style="text-align: center;">
+<div class="content">
   <p>*тык*:</p>
   <audio controls>
-    <source src="https://cvws.icloud-content.com/B/AVmVXJmg0hAoOkcqAvGoJOpxdcZyARPcH6VFk9kQKvlyka-ugkYGkJLd/%D0%9F%D1%80%D0%BE%D0%BD%D0%B7%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B7%D0%B2%D0%BE%D0%BD%D0%BE%D0%BA_%D0%BD%D0%B0_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_%D0%93%D1%80%D0%BE%D0%BC%D0%BA%D0%B8%D0%B9_%D0%B1%D1%83%D0%B4%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA_.mp3" type="audio/mpeg">
+    <source src="https://cvws.icloud-content.com/B/AVmVXJmg0hAoOkcqAvGoJOpxdcZyARPcH6VFk9kQKvlyka-ugkYGkJLd/..." type="audio/mpeg">
     Ваш браузер не поддерживает аудиоэлемент.
   </audio>
 </div>
@@ -204,9 +232,9 @@
   </div>
 
   <div class="gallery">
-    <img src="2025-04-09 17-14-24 (1).jpeg">
-    <img src="2025-04-09 17-14-24.jpeg">
-    <img src="2025-04-09 17-33-42.jpeg">
+    <img src="2025-04-09 17-14-24 (1).jpeg" alt="Фото 1">
+    <img src="2025-04-09 17-14-24.jpeg" alt="Фото 2">
+    <img src="2025-04-09 17-33-42.jpeg" alt="Фото 3">
   </div>
 
   <div class="list">
@@ -229,20 +257,31 @@
   </div>
 </section>
 
-<script>
-  function showSecret() {
-    document.getElementById('secret').style.display = 'block';
-  }
-</script>
-
-</body>
-</html>
+<!-- Модальное окно -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
 <script>
   function showSecret() {
     document.getElementById('secret').style.display = 'block';
   }
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modalImage");
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
 </script>
+
 </body>
 </html>
-
