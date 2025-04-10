@@ -261,12 +261,13 @@
   Ваш браузер не поддерживает аудиоэлемент.
 </audio>
 </div>
-
+<audio id="chorusAudio" preload="auto">
+  <source src="VID_20250410_092140_752.mp4.mp3" type="audio/mpeg">
+  Ваш браузер не поддерживает аудиоэлемент.
+</audio>
 <section>
   <div class="message">
-    Я долго думал, как сказать тебе всё, что чувствую...<br>
-    Ты невероятная. Твоя улыбка — как утро в начале весны.<br>
-    И каждый день, когда мы общаемся, становится чуть-чуть светлее.
+   И в красивом платье, и фонариками из коктеля и даже в костюме гусеницы ты выглядишь невероятно<br>
   </div>
 
   <div class="gallery">
@@ -274,24 +275,12 @@
     <img src="2025-04-09 17-14-24.jpeg" alt="Фото 2">
     <img src="2025-04-09 17-33-42.jpeg" alt="Фото 3">
   </div>
-
-  <div class="list">
-    <h3>Топ-5 причин, почему ты мне нравишься:</h3>
-    <ul>
-      <li>Твоя искренняя улыбка</li>
-      <li>Твоя доброта и ум</li>
-      <li>Твоя энергия</li>
-      <li>Как ты смеёшься</li>
-      <li>Ты просто ты. И этого достаточно.</li>
-    </ul>
-  </div>
-
   <div class="cta">
-   <button onclick="showSecret()">Нажми, если хочешь узнать секрет</button>
+   <button onclick="showSecret()">Надо нажать </button>
     <div id="secretBox" style="display: none;">
       <div class="hidden-message" id="secretText">
-        Ты мне очень нравишься.<br>
-        Хочешь встретиться и прогуляться вместе?
+        Пока пришли только цветы<br>
+        Как придет вторая доставка тут будет код))
       </div>
       <div class="hidden-image" id="secretImage">
         <img src="scale_1200.png" alt="Секретная фотка" style="max-width: 300px; border-radius: 10px;">
@@ -313,15 +302,20 @@
     const secretBox = document.getElementById('secretBox');
     const secretText = document.getElementById('secretText');
     const secretImage = document.getElementById('secretImage');
+    const chorusAudio = document.getElementById('chorusAudio');
 
     if (!secretVisible) {
       secretBox.style.display = 'block';
       secretText.style.display = 'block';
       secretImage.style.display = 'block';
+      chorusAudio.currentTime = 0;
+      chorusAudio.play();
     } else {
       secretBox.style.display = 'none';
       secretText.style.display = 'none';
       secretImage.style.display = 'none';
+      chorusAudio.pause();
+      chorusAudio.currentTime = 0;
     }
 
     secretVisible = !secretVisible;
@@ -331,6 +325,5 @@
     document.getElementById('modal').style.display = "none";
   }
 </script>
-
 </body>
 </html>
